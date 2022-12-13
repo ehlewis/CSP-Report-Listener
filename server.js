@@ -17,8 +17,8 @@ let reports = [];
 
 console.log("Started server");
 
-app.get("/reports", (request, response) => {
-  response.send(reports);
+app.get("/", (request, response) => {
+  response.send("hello");
 });
 
 app.get("/reports", (request, response) => {

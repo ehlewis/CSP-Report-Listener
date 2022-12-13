@@ -4,9 +4,9 @@ const { prettyPrintJson } = require("pretty-print-json");
 const app = express();
 const cors = require("cors");
 
-const server = app.listen(process.env.PORT);
-console.log("Listening on: " + process.env.PORT)
-const io = require("socket.io").listen(server);
+const PORT = process.env.PORT || 3000
+
+
 
 app.use(cors());
 app.set("view engine", "pug");
@@ -15,7 +15,12 @@ app.use(express.static("public"));
 
 let reports = [];
 
-console.log("Started server");
+console.log("Starting server");
+
+app.get("/", (request, response) => {
+  console.log("user pinged")
+  response.send("hello");
+});
 
 app.get("/reports", (request, response) => {
   response.send(reports);
@@ -53,6 +58,6 @@ function handleReportRequest(request, response) {
       );
 }
 
-io.on("connection", socket => {
-  console.log("PING");
-});
+app.listen(PORT, () => {
+  console.log(`CSP Reporter app listening at ${PORT}`)
+})

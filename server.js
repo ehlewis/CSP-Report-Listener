@@ -4,8 +4,8 @@ const { prettyPrintJson } = require("pretty-print-json");
 const app = express();
 const cors = require("cors");
 
-const server = app.listen(process.env.PORT);
-console.log("Listening on: " + process.env.PORT)
+const server = app.listen(80);
+console.log("Listening on: " + "80")
 const io = require("socket.io").listen(server);
 
 app.use(cors());
@@ -16,6 +16,10 @@ app.use(express.static("public"));
 let reports = [];
 
 console.log("Started server");
+
+app.get("/reports", (request, response) => {
+  response.send(reports);
+});
 
 app.get("/reports", (request, response) => {
   response.send(reports);

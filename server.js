@@ -22,6 +22,10 @@ app.get("/", (request, response) => {
   response.send("hello");
 });
 
+app.get("/", (request, response) => {
+  response.send("hello");
+});
+
 app.get("/reports", (request, response) => {
   response.send(reports);
 });

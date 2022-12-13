@@ -50,11 +50,13 @@ function handleReportRequest(request, response) {
   request.on("end", () => {
     const report = JSON.parse(data);
     console.log(report);
-    fs.writeFile('/violations.txt', report, { flag: 'a'}, err => {
+    fs.writeFile(__dirname + '/violations.txt', JSON.stringify(report), { flag: 'a'}, err => {
       if (err) {
         console.error(err);
       }
-      console.log("violation written to file")
+      else{
+        console.log("violation written to file")
+      }
     });
   });
   response.status(200).send("OK");

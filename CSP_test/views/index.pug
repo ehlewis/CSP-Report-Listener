@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='description' content='Reporting API demo')
+  title 💥 Reporting API demo
+  link(rel='stylesheet' href='/style.css')
+  script(src='/script.js' defer='')
+  script(src='https://example.com/script.js' defer='') <!-- CSP violation -->
+body
+  header
+    h1 Reporting API demo: 💥 Reports generation page
+    div(class="info-banner")
+      a(href=codeUrl) SEE THE CODE 👩🏻‍💻
+      span   ✦  Questions? Ping 
+        a(href=author) maudnals
+        |.
+      div.aside
+        | The Reporting API is a generic framework to allow reporting for web platform features. 
+        | This demo runs code that deliberately violates policies and does other bad things 💥 in order to generate reports. 
+      div.aside.error
+        | Run this demo in Chrome, version 96 or later (check via chrome://version). 
+      div.aside
+        | Optionally, to receive reports faster as you're experimenting with this demo, run Chrome with the flag --short-reporting-delay. This flag is not 
+        | available via the Chrome UI, it's a command line flag. See  
+        a(href="https://www.chromium.org/developers/how-tos/run-chromium-with-flags") how to run Chromium with flags
+        |.
+  main
+    div
+      span This page uses the  
+      span(class=`badge ${version}`)=`Reporting API ${version}`
+      |.
+    br
+    ol
+      li Load this page. Upon loading, this page generates one report of each of these types (if supported by the browser):
+        ul
+          li CSP violation
+          li Deprecation
+          li Document policy violation
+          li Intervention
+          li Permissions policy violation (experimental)
+          | It also opens a separate page and by doing so, generates a COOP violation.
+      li Open or reload 
+        a(href=reportsDisplayUrl)=reportsDisplayUrl
+        |  to see all reports.
+    div.note ☝️ Note: If you want to generate a crash report, you'll need to do it manually: type chrome://crash/ in your browser from this page.
+    div.note 💥 This page has console errors and issues. That's expected: it tries to violate its own security policies, uses deprecated APIs, and does other bad things in order to generate reports.

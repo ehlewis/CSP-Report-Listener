@@ -1,0 +1,90 @@
+body {
+  --margin: 2rem;
+  --primary-blue: #0034ff;
+  font-family: sans-serif;
+  margin: var(--margin);
+  max-width: 50rem;
+}
+
+h1 {
+  line-height: 1.1;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 3rem 0;
+}
+
+.info-banner {
+  font-size: .9rem; 
+  background: gainsboro;
+  padding: .4rem;
+}
+
+a,
+a:visited {
+  color: var(--primary-blue);
+}
+
+.note {
+  font-size: 80%;
+  line-height: 1rem;
+  padding-top: 0.8rem;
+}
+
+.aside {
+  margin: .4rem 0;
+  line-height: 1rem;
+}
+
+.warning {
+  color: #db7900;
+}
+
+.error {
+  color: #cd0000;
+}
+
+/* Lists */
+
+/* li::marker {
+  font-weight: bold;
+  font-size: 133%;
+} */
+
+ul li {
+  list-style: none;
+}
+
+ul li::before {
+  content: "✔️";
+}
+
+/* Version badge */
+
+.badge {
+  background: var(--background-color);
+  padding: 2px 10px;
+  color: white;
+  border-radius: 12px;
+}
+
+.v1 {
+  --background-color: var(--primary-blue);
+}
+
+.v0 {
+  --background-color: red;
+}
+
+/* Expandable details element */
+
+details {
+  font-size: 80%;
+  padding-top: 0.4rem;
+}
+
+summary {
+  cursor: pointer;
+}

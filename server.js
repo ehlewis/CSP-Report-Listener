@@ -50,7 +50,7 @@ function handleReportRequest(request, response) {
   request.on("end", () => {
     const report = JSON.parse(data);
     console.log(report);
-    fs.writeFile(__dirname + '/violations.txt', JSON.stringify(report), { flag: 'a'}, err => {
+    fs.writeFile(__dirname + '/violations.txt', new Date().toISOString().concat(": ", JSON.stringify(report), "\n"), { flag: 'a'}, err => {
       if (err) {
         console.error(err);
       }

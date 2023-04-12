@@ -14,7 +14,7 @@
     "express": "^4.17.3",
     "json-formatter-js": "^2.3.4",
     "nano": "^9.0.4",
-    "pretty-print-json": "^1.0.0",
+    "pretty-print-json": "^1.4.1",
     "pug": "^3.0.1",
     "socket.io": "^4.5.0"
   },

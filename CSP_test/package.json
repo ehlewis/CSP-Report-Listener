@@ -10,7 +10,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pretty-print-json": "^1.0.0",
     "pug": "^3.0.2"
   },
